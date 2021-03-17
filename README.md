@@ -2,9 +2,19 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Error that occurs when making PnPJS calls with SPFx 1.12
 
-[picture of the solution in action, if possible]
+`TypeError: Object(...) is not a function
+    at factory (invokable-binder.js:17)
+    at applyFactoryExtensions (invokable-extensions.js:86)
+    at invokable-binder.js:26
+    at index.js:12
+    at SPRest.9l4K.SPRest.childConfigHook (rest.js:67)
+    at SPRest.get [as hubSites] (index.js:10)
+    at HelloWorldApplicationCustomizer.<anonymous> (HelloWorldApplicationCustomizer.ts:46)
+    at step (hello-world-application-customizer_1f69d4fa99b0f1f6c321.js:15573)
+    at Object.next (hello-world-application-customizer_1f69d4fa99b0f1f6c321.js:15554)
+    at hello-world-application-customizer_1f69d4fa99b0f1f6c321.js:15548`
 
 ## Used SharePoint Framework Version
 

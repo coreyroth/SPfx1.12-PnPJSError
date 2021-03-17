@@ -6,6 +6,8 @@ import {
 import { Dialog } from '@microsoft/sp-dialog';
 
 import * as strings from 'HelloWorldApplicationCustomizerStrings';
+
+// Tried presets instead of selective imports per early suggestion
 import { sp } from "@pnp/sp/presets/all";
 import { IHubSiteInfo } from "@pnp/sp/hubsites";
 
@@ -34,7 +36,7 @@ export default class HelloWorldApplicationCustomizer
       message = '(No properties were provided.)';
     }
 
-    console.log(`Hello from ${strings.Title}:\n\n${message}`);
+    console.log(`Hello from ${strings.Title}:\n\n${message} 4`);
 
     await this.getHubSiteFromService(this.context?.pageContext?.legacyPageContext?.hubSiteId);
 
@@ -43,8 +45,9 @@ export default class HelloWorldApplicationCustomizer
 
   private getHubSiteFromService = async (hubSiteId: string) => {
     try {
+      console.log('Getting HUB SITE INFO');
       const hubSiteInfo: IHubSiteInfo = await sp.hubSites.getById(hubSiteId)();
-      console.info('IHubSiteInfo from service - ', hubSiteInfo);
+      console.log('IHubSiteInfo from service - ', hubSiteInfo);
       return hubSiteInfo;
     }
     catch (error) {
