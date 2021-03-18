@@ -2,6 +2,7 @@
 
 ## Summary
 
+Repo for PnPJS issue [#1654](https://github.com/pnp/pnpjs/issues/1654)
 Error that occurs when making PnPJS calls with SPFx 1.12
 
 `TypeError: Object(...) is not a function

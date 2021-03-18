@@ -10,6 +10,8 @@ import * as strings from 'HelloWorldApplicationCustomizerStrings';
 // Tried presets instead of selective imports per early suggestion
 import { sp } from "@pnp/sp/presets/all";
 import { IHubSiteInfo } from "@pnp/sp/hubsites";
+import { IItem } from "@pnp/sp/items";
+
 
 const LOG_SOURCE: string = 'HelloWorldApplicationCustomizer';
 
@@ -39,6 +41,7 @@ export default class HelloWorldApplicationCustomizer
     console.log(`Hello from ${strings.Title}:\n\n${message} 4`);
 
     await this.getHubSiteFromService(this.context?.pageContext?.legacyPageContext?.hubSiteId);
+    await this.getPageListItem((this.context?.pageContext?.list.id as any)._guid, this.context?.pageContext?.listItem.id);
 
     return Promise.resolve();
   }
@@ -53,6 +56,18 @@ export default class HelloWorldApplicationCustomizer
     catch (error) {
       console.error('PnP call error - exception getting hub site - ', error);
       return undefined;
+    }
+  }
+
+  private getPageListItem = async (listId: string, listItemId: number): Promise<IItem> => {
+    try {
+      let pageListItem: IItem = await sp.web.lists.getById(listId).items.getById(listItemId).usingCaching().get();
+      console.info('PageListItem - ', pageListItem);
+
+      return pageListItem;
+    }
+    catch (error) {
+      console.warn('PnP call error list item - ', error);
     }
   }
 }
