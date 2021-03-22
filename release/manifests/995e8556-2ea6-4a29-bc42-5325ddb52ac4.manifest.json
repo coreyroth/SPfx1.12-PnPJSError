@@ -14,7 +14,7 @@
     "scriptResources": {
       "hello-world-application-customizer": {
         "type": "path",
-        "path": "hello-world-application-customizer_e72b0117cda570c41ee1.js"
+        "path": "hello-world-application-customizer_aafbfe143bce49515692.js"
       },
       "HelloWorldApplicationCustomizerStrings": {
         "type": "localizedPath",
@@ -22,11 +22,6 @@
           "en-US": "HelloWorldApplicationCustomizerStrings_en-us_7949d2dd8f4ed55ec12a8877766f5523.js"
         },
         "defaultPath": "HelloWorldApplicationCustomizerStrings_en-us_7949d2dd8f4ed55ec12a8877766f5523.js"
-      },
-      "tslib": {
-        "type": "component",
-        "id": "01c4df03-e775-48cb-aa14-171ee5199a15",
-        "version": "1.10.0"
       },
       "@microsoft/sp-application-base": {
         "type": "component",

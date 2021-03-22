@@ -3,16 +3,16 @@
     "hello-world-application-customizer": {
       "dependencies": [
         {
-          "componentId": "01c4df03-e775-48cb-aa14-171ee5199a15",
-          "componentName": "tslib",
-          "componentVersion": "1.10.0",
-          "isDirectDependency": true
-        },
-        {
           "componentId": "4df9bb86-ab0a-4aab-ab5f-48bf167048fb",
           "componentName": "@microsoft/sp-application-base",
           "componentVersion": "1.12.0",
           "isDirectDependency": true
+        },
+        {
+          "componentId": "01c4df03-e775-48cb-aa14-171ee5199a15",
+          "componentName": "tslib",
+          "componentVersion": "1.10.0",
+          "isDirectDependency": false
         },
         {
           "componentId": "8217e442-8ed3-41fd-957d-b112e841286a",

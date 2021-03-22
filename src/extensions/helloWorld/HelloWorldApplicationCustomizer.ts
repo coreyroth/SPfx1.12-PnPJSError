@@ -32,13 +32,19 @@ export default class HelloWorldApplicationCustomizer
   @override
   public async onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+    sp.setup({
+      spfxContext: this.context,
+      defaultCachingStore: "session",
+      defaultCachingTimeoutSeconds: 300,
+      enableCacheExpiration: true,
+    });
 
     let message: string = this.properties.testMessage;
     if (!message) {
       message = '(No properties were provided.)';
     }
 
-    console.log(`Hello from ${strings.Title}:\n\n${message} 4`);
+    console.log(`Hello from ${strings.Title}:\n\n${message} 5`);
 
     await this.getHubSiteFromService(this.context?.pageContext?.legacyPageContext?.hubSiteId);
     await this.getPageListItem((this.context?.pageContext?.list.id as any)._guid, this.context?.pageContext?.listItem.id);
